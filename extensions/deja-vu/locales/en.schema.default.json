@@ -1,5 +1,25 @@
 {
-   "recently_viewed": {
-      "label": "Recently Viewed Products!!!",
-  },
+  "recently_viewed": {
+    "label": "Recently viewed products",
+    "settings": {
+      "spacing": {
+        "label": "Spacing"
+      },
+      "colors": {
+        "label": "Colors"
+      },
+      "layout": {
+        "label": "Layout"
+      },
+      "typography": {
+        "label": "Typography"
+      },
+      "product_cards": {
+        "label": "Product Cards"
+      },
+      "carousel": {
+        "label": "Carousel"
+      }
+    }
+  }
 }

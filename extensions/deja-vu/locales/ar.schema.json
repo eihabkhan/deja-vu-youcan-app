@@ -1,5 +1,25 @@
 {
-   "recently_viewed": {
-      "label": "Al product recently viewed",
-  },
+  "recently_viewed": {
+    "label": "المنتجات التي شاهدتها مؤخرًا",
+    "settings": {
+      "spacing": {
+        "label": "المسافات"
+      },
+      "colors": {
+        "label": "الألوان"
+      },
+      "layout": {
+        "label": "التخطيط"
+      },
+      "typography": {
+        "label": "تصميم الخط"
+      },
+      "product_cards": {
+        "label": "بطاقات المنتجات"
+      },
+      "carousel": {
+        "label": "سلايدر"
+      }
+    }
+  }
 }

@@ -1,5 +1,25 @@
 {
-   "recently_viewed": {
-      "label": "Le Products!!! Viewed Recently",
-  },
+  "recently_viewed": {
+    "label": "Produits consultés récemment",
+    "settings": {
+      "spacing": {
+        "label": "Espacement"
+      },
+      "colors": {
+        "label": "Couleurs"
+      },
+      "layout": {
+        "label": "Mise en page"
+      },
+      "typography": {
+        "label": "Style de police"
+      },
+      "product_cards": {
+        "label": "Cartes produits"
+      },
+      "carousel": {
+        "label": "Carrousel"
+      }
+    }
+  }
 }
