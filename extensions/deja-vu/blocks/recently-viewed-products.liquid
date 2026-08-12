@@ -1,0 +1,25 @@
+<div
+  class="recently-viewed"
+  data-announcement-bar
+  {% if block.settings.dismissible %}data-dismissible{% endif %}
+  style="--announcement-bg: {{ block.settings.background.hex }}; --announcement-color: {{ block.settings.text_color.hex }}"
+>
+ Recently viewed
+</div>
+
+{% schema %}
+{
+  "label": "Recently viewed products",
+  "target": "section",
+  "javascript": "deja-vu.js",
+  "stylesheet": "deja-vu.css",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement",
+      "default": "Free shipping on all orders this week"
+    }
+  ]
+}
+{% endschema %}
