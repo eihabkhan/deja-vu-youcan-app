@@ -4,6 +4,7 @@
     "settings": {
       "spacing": {
         "label": "Espacement",
+        "spacing_unit": "Unité d'espacement",
         "vertical": "Espacement vertical",
         "horizontal": "Espacement horizontal"
       },

@@ -4,6 +4,7 @@
     "settings": {
       "spacing": {
         "label": "المسافات",
+        "spacing_unit": "وحدة المسافات",
         "vertical": "المسافة العمودية",
         "horizontal": "المسافة الأفقية"
       },

@@ -4,6 +4,7 @@
     "settings": {
       "spacing": {
         "label": "Spacing",
+        "spacing_unit": "Spacing unit",
         "vertical": "Vertical spacing",
         "horizontal": "Horizontal spacing"
       },

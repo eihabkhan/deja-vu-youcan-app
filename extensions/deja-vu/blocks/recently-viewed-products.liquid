@@ -19,6 +19,78 @@
       "content": "Spacing"
     },
     {
+      "type": "select",
+      "id": "spacing_unit",
+      "label": "t:recently_viewed.settings.spacing.spacing_unit",
+      "options": [
+          {
+              "value": "px",
+              "label": "px"
+          },
+          {
+              "value": "%",
+              "label": "%"
+          }
+      ],
+      "default": "px"
+    },
+    {
+      "type": "range",
+      "id": "vertical_spacing_px",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "t:recently_viewed.settings.spacing.vertical",
+      "default": 24,
+      "visible_if": {
+        "setting_id": "spacing_unit",
+        "value": "px"
+      }
+    },
+    {
+      "type": "range",
+      "id": "horizontal_spacing_px",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "t:recently_viewed.settings.spacing.horizontal",
+      "default": 24,
+      "visible_if": {
+        "setting_id": "spacing_unit",
+        "value": "px"
+      }
+    },
+    {
+      "type": "range",
+      "id": "vertical_spacing_percent",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "%",
+      "label": "t:recently_viewed.settings.spacing.vertical",
+      "default": 10,
+      "visible_if": {
+        "setting_id": "spacing_unit",
+        "value": "%"
+      }
+    },
+    {
+      "type": "range",
+      "id": "horizontal_spacing_percent",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "%",
+      "label": "t:recently_viewed.settings.spacing.horizontal",
+      "default": 10,
+      "visible_if": {
+        "setting_id": "spacing_unit",
+        "value": "%"
+      }
+    },
+    {
       "type": "header",
       "content": "Colors"
     },
