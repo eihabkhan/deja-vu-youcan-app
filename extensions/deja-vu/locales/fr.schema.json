@@ -35,7 +35,7 @@
       "product_cards": {
         "label": "Cartes produits",
         "style": {
-          "label": "Style",
+          "label": "Style de carte",
           "classic": "Classique",
           "modern": "Moderne",
           "minimal": "Minimal"

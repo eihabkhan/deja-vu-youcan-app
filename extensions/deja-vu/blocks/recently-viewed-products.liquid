@@ -371,6 +371,83 @@
       "content": "t:recently_viewed.settings.product_cards.label"
     },
     {
+      "type": "select",
+      "id": "product_card_style",
+      "label": "t:recently_viewed.settings.product_cards.style.label",
+      "options": [
+          {
+            "value": "classic",
+            "label": "t:recently_viewed.settings.product_cards.style.classic"
+          },
+          {
+            "value": "modern",
+            "label": "t:recently_viewed.settings.product_cards.style.modern"
+          },
+          {
+            "value": "minimal",
+            "label": "t:recently_viewed.settings.product_cards.style.minimal"
+          }
+      ],
+      "default": "classic"
+    },
+    {
+      "type": "range",
+      "id": "product_card_border_radius",
+      "label": "t:recently_viewed.settings.product_cards.border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "default": 12,
+      "visible_if": {
+        "setting_id": "product_card_style",
+        "value": "minimal",
+        "operator": "!="
+      }
+    },
+    {
+      "type": "select",
+      "id": "product_card_image_ratio",
+      "label": "t:recently_viewed.settings.product_cards.image_ratio",
+      "options": [
+          {
+            "value": "1 / 1",
+            "label": "1:1"
+          },
+          {
+            "value": "3 / 4",
+            "label": "3:4"
+          },
+          {
+            "value": "2 / 3",
+            "label": "2:3"
+          },
+          {
+            "value": "4 / 5",
+            "label": "4:5"
+          }
+      ],
+      "default": "1 / 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_price",
+      "label": "t:recently_viewed.settings.product_cards.show_product_price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_compare_at_price",
+      "label": "t:recently_viewed.settings.product_cards.show_compare_at_price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_second_image_on_hover",
+      "label": "t:recently_viewed.settings.product_cards.show_second_image_on_hover",
+      "default": true
+    },
+    {
       "type": "header",
       "content": "t:recently_viewed.settings.carousel.label"
     },

@@ -35,7 +35,7 @@
       "product_cards": {
         "label": "بطاقات المنتجات",
         "style": {
-          "label": "النمط",
+          "label": "نمط البطاقة",
           "classic": "كلاسيكي",
           "modern": "عصري",
           "minimal": "بسيط"

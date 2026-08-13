@@ -35,7 +35,7 @@
       "product_cards": {
         "label": "Product Cards",
         "style": {
-          "label": "Style",
+          "label": "Card Style",
           "classic": "Classic",
           "modern": "Modern",
           "minimal": "Minimal"
