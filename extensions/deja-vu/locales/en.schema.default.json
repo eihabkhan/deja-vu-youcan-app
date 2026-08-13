@@ -6,7 +6,8 @@
         "label": "Spacing",
         "spacing_unit": "Spacing unit",
         "vertical": "Vertical spacing",
-        "horizontal": "Horizontal spacing"
+        "horizontal": "Horizontal spacing",
+        "heading_bottom_spacing": "Heading bottom spacing"
       },
       "colors": {
         "label": "Colors",

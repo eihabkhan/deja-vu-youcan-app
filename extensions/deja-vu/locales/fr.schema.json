@@ -6,7 +6,8 @@
         "label": "Espacement",
         "spacing_unit": "Unité d'espacement",
         "vertical": "Espacement vertical",
-        "horizontal": "Espacement horizontal"
+        "horizontal": "Espacement horizontal",
+        "heading_bottom_spacing": "Espacement sous le titre"
       },
       "colors": {
         "label": "Couleurs",

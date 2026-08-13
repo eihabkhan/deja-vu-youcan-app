@@ -6,7 +6,8 @@
         "label": "المسافات",
         "spacing_unit": "وحدة المسافات",
         "vertical": "المسافة العمودية",
-        "horizontal": "المسافة الأفقية"
+        "horizontal": "المسافة الأفقية",
+        "heading_bottom_spacing": "المسافة أسفل العنوان"
       },
       "colors": {
         "label": "الألوان",
