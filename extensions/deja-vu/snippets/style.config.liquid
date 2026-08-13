@@ -1,0 +1,29 @@
+<style>
+  #youcan-block--{{ block.id }} {
+    --bg-color: {{ block.settings.background_color.hex }};
+    --text-color: {{ block.settings.text_color.hex }};
+    
+    --heading-alignment: {{ block.settings.heading_alignment }};
+    
+    --cards-gap: {{ block.settings.cards_gap }}px;
+    
+    --title-font-family: {{ block.settings.title_font_family }};
+    --body-font-family: {{ block.settings.body_font_family }};
+    --title-font-size: {{ block.settings.title_size }}px;
+    --subheading-font-size: {{ block.settings.subheading_size }}px;
+    --body-font-size: {{ block.settings.body_size }}px;
+
+    --product-card-radius: {{ block.settings.product_card_border_radius }}px;
+    --product-card-ratio: {{ block.settings.product_card_image_ratio }};
+
+
+    {% if block.settings.spacing_unit == 'px' %}
+      --vertical-spacing: {{ block.settings.vertical_spacing_px }}{{ block.settings.spacing_unit }};
+      --horizontal-spacing: {{ block.settings.horizontal_spacing_px }}{{ block.settings.spacing_unit }}
+    {% endif %}
+    {% if block.settings.spacing_unit == '%' %}
+      --vertical-spacing: {{ block.settings.vertical_spacing_percent }}{{ block.settings.spacing_unit }};
+      --horizontal-spacing: {{ block.settings.horizontal_spacing_vertical_spacing_percent }}{{ block.settings.spacing_unit }}
+    {% endif %}
+  }
+</style>
