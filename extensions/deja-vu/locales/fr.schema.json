@@ -29,7 +29,8 @@
         "subheading_size": "Taille du sous-titre",
         "body_size": "Taille du texte",
         "title_font_family": "Police du titre",
-        "body_font_family": "Police du texte"
+        "body_font_family": "Police du texte",
+        "inherit_from_theme": "Hériter du thème"
       },
       "product_cards": {
         "label": "Cartes produits",

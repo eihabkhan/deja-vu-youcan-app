@@ -16,6 +16,366 @@
   "settings": [
     {
       "type": "header",
+      "content": "t:recently_viewed.settings.colors.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:recently_viewed.settings.colors.background_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:recently_viewed.settings.colors.text_color",
+      "default": "#0e0d0d"
+    },
+    {
+      "type": "header",
+      "content": "t:recently_viewed.settings.layout.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "t:recently_viewed.settings.layout.heading_alignment.label",
+      "options": [
+          {
+              "value": "start",
+              "label": "t:recently_viewed.settings.layout.heading_alignment.start"
+          },
+          {
+              "value": "center",
+              "label": "t:recently_viewed.settings.layout.heading_alignment.center"
+          }
+      ],
+      "default": "start"
+    },
+    {
+      "type": "range",
+      "id": "cards_gap",
+      "min": 4,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "t:recently_viewed.settings.layout.cards_gap",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_current_product",
+      "label": "t:recently_viewed.settings.layout.hide_current_product",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:recently_viewed.settings.typography.label"
+    },
+    {
+      "type": "select",
+      "id": "title_font_family",
+      "label": "t:recently_viewed.settings.typography.title_font_family",
+      "options": [
+          {
+              "value": "inherit",
+              "label": "t:recently_viewed.settings.typography.inherit_from_theme"
+          },
+          {
+              "value": "Inter",
+              "label": "Inter"
+          },
+          {
+              "value": "Roboto",
+              "label": "Roboto"
+          },
+          {
+              "value": "DM Sans",
+              "label": "DM Sans"
+          },
+          {
+              "value": "Poppins",
+              "label": "Poppins"
+          },
+          {
+              "value": "Montserrat",
+              "label": "Montserrat"
+          },
+          {
+              "value": "Fredoka",
+              "label": "Fredoka"
+          },
+          {
+              "value": "Cairo",
+              "label": "Cairo"
+          },
+          {
+              "value": "Tajawal",
+              "label": "Tajawal"
+          },
+          {
+              "value": "Almarai",
+              "label": "Almarai"
+          },
+          {
+              "value": "Noto Kufi Arabic",
+              "label": "Noto Kufi Arabic"
+          }
+      ],
+      "default": "inherit"
+    },
+    {
+      "type": "select",
+      "id": "body_font_family",
+      "label": "t:recently_viewed.settings.typography.body_font_family",
+      "options": [
+          {
+              "value": "inherit",
+              "label": "t:recently_viewed.settings.typography.inherit_from_theme"
+          },
+          {
+              "value": "Inter",
+              "label": "Inter"
+          },
+          {
+              "value": "Roboto",
+              "label": "Roboto"
+          },
+          {
+              "value": "DM Sans",
+              "label": "DM Sans"
+          },
+          {
+              "value": "Poppins",
+              "label": "Poppins"
+          },
+          {
+              "value": "Montserrat",
+              "label": "Montserrat"
+          },
+          {
+              "value": "Fredoka",
+              "label": "Fredoka"
+          },
+          {
+              "value": "Cairo",
+              "label": "Cairo"
+          },
+          {
+              "value": "Tajawal",
+              "label": "Tajawal"
+          },
+          {
+              "value": "Almarai",
+              "label": "Almarai"
+          },
+          {
+              "value": "Noto Kufi Arabic",
+              "label": "Noto Kufi Arabic"
+          }
+      ],
+      "default": "inherit"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "t:recently_viewed.settings.typography.title_size",
+      "options": [
+          {
+              "value": "inherit",
+              "label": "t:recently_viewed.settings.typography.inherit_from_theme"
+          },
+          {
+              "value": "11px",
+              "label": "11px"
+          },
+          {
+              "value": "12px",
+              "label": "12px"
+          },
+          {
+              "value": "13px",
+              "label": "13px"
+          },
+          {
+              "value": "14px",
+              "label": "14px"
+          },
+          {
+              "value": "16px",
+              "label": "16px"
+          },
+          {
+              "value": "20px",
+              "label": "20px"
+          },
+          {
+              "value": "24px",
+              "label": "24px"
+          },
+          {
+              "value": "32px",
+              "label": "32px"
+          },
+          {
+              "value": "36px",
+              "label": "36px"
+          },
+          {
+              "value": "40px",
+              "label": "40px"
+          },
+          {
+              "value": "48px",
+              "label": "48px"
+          },
+          {
+              "value": "64px",
+              "label": "64px"
+          },
+          {
+              "value": "96px",
+              "label": "96px"
+          }
+      ],
+      "default": "inherit"
+    },
+    {
+      "type": "select",
+      "id": "subheading_size",
+      "label": "t:recently_viewed.settings.typography.subheading_size",
+      "options": [
+          {
+              "value": "inherit",
+              "label": "t:recently_viewed.settings.typography.inherit_from_theme"
+          },
+          {
+              "value": "11px",
+              "label": "11px"
+          },
+          {
+              "value": "12px",
+              "label": "12px"
+          },
+          {
+              "value": "13px",
+              "label": "13px"
+          },
+          {
+              "value": "14px",
+              "label": "14px"
+          },
+          {
+              "value": "16px",
+              "label": "16px"
+          },
+          {
+              "value": "20px",
+              "label": "20px"
+          },
+          {
+              "value": "24px",
+              "label": "24px"
+          },
+          {
+              "value": "32px",
+              "label": "32px"
+          },
+          {
+              "value": "36px",
+              "label": "36px"
+          },
+          {
+              "value": "40px",
+              "label": "40px"
+          },
+          {
+              "value": "48px",
+              "label": "48px"
+          },
+          {
+              "value": "64px",
+              "label": "64px"
+          },
+          {
+              "value": "96px",
+              "label": "96px"
+          }
+      ],
+      "default": "inherit"
+    },
+    {
+      "type": "select",
+      "id": "body_size",
+      "label": "t:recently_viewed.settings.typography.body_size",
+      "options": [
+          {
+              "value": "inherit",
+              "label": "t:recently_viewed.settings.typography.inherit_from_theme"
+          },
+          {
+              "value": "11px",
+              "label": "11px"
+          },
+          {
+              "value": "12px",
+              "label": "12px"
+          },
+          {
+              "value": "13px",
+              "label": "13px"
+          },
+          {
+              "value": "14px",
+              "label": "14px"
+          },
+          {
+              "value": "16px",
+              "label": "16px"
+          },
+          {
+              "value": "20px",
+              "label": "20px"
+          },
+          {
+              "value": "24px",
+              "label": "24px"
+          },
+          {
+              "value": "32px",
+              "label": "32px"
+          },
+          {
+              "value": "36px",
+              "label": "36px"
+          },
+          {
+              "value": "40px",
+              "label": "40px"
+          },
+          {
+              "value": "48px",
+              "label": "48px"
+          },
+          {
+              "value": "64px",
+              "label": "64px"
+          },
+          {
+              "value": "96px",
+              "label": "96px"
+          }
+      ],
+      "default": "inherit"
+    },
+    {
+      "type": "header",
+      "content": "t:recently_viewed.settings.product_cards.label"
+    },
+    {
+      "type": "header",
+      "content": "t:recently_viewed.settings.carousel.label"
+    },
+    {
+      "type": "header",
       "content": "t:recently_viewed.settings.spacing.label"
     },
     {
@@ -89,70 +449,6 @@
         "setting_id": "spacing_unit",
         "value": "%"
       }
-    },
-    {
-      "type": "header",
-      "content": "t:recently_viewed.settings.colors.label"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "t:recently_viewed.settings.colors.background_color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "t:recently_viewed.settings.colors.text_color",
-      "default": "#0e0d0d"
-    },
-    {
-      "type": "header",
-      "content": "t:recently_viewed.settings.layout.label"
-    },
-    {
-      "type": "select",
-      "id": "heading_alignment",
-      "label": "t:recently_viewed.settings.layout.heading_alignment.label",
-      "options": [
-          {
-              "value": "start",
-              "label": "t:recently_viewed.settings.layout.heading_alignment.start"
-          },
-          {
-              "value": "center",
-              "label": "t:recently_viewed.settings.layout.heading_alignment.center"
-          }
-      ],
-      "default": "start"
-    },
-    {
-      "type": "range",
-      "id": "cards_gap",
-      "min": 4,
-      "max": 40,
-      "step": 4,
-      "unit": "px",
-      "label": "t:recently_viewed.settings.layout.cards_gap",
-      "default": 16
-    },
-    {
-      "type": "checkbox",
-      "id": "hide_current_product",
-      "label": "t:recently_viewed.settings.layout.hide_current_product",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "t:recently_viewed.settings.typography.label"
-    },
-    {
-      "type": "header",
-      "content": "t:recently_viewed.settings.product_cards.label"
-    },
-    {
-      "type": "header",
-      "content": "t:recently_viewed.settings.carousel.label"
     }
   ]
 }

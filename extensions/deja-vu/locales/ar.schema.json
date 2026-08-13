@@ -29,7 +29,8 @@
         "subheading_size": "حجم العنوان الفرعي",
         "body_size": "حجم النص",
         "title_font_family": "خط العنوان",
-        "body_font_family": "خط النص"
+        "body_font_family": "خط النص",
+        "inherit_from_theme": "خط القالب الافتراضي"
       },
       "product_cards": {
         "label": "بطاقات المنتجات",
