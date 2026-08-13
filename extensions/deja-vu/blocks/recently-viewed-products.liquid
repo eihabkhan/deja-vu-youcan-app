@@ -8,10 +8,11 @@
   {% endif %}
   data-product-card-style="{{ block.settings.product_card_style }}"
 >
-  <div class="head">
-    <h2>Title</h2>
-    <p>Subheading</p>
-  </div>
+  {% 
+    render 'snippet.heading',
+    title: block.settings.title,
+    subheading: block.settings.subheading
+  %}
   <div class="main-content">
     Cards go here
     {% render 'snippet.product-card' %}
@@ -23,6 +24,22 @@
   "label": "t:recently_viewed.label",
   "target": "section",
   "settings": [
+    {
+      "type": "header",
+      "content": "t:recently_viewed.settings.content.label"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:recently_viewed.settings.content.title",
+      "default": "Recently viewed products"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "t:recently_viewed.settings.content.subheading",
+      "default": "Pick up where you left off."
+    },
     {
       "type": "header",
       "content": "t:recently_viewed.settings.colors.label"

@@ -53,6 +53,11 @@
         "per_page_mobile": "Per page mobile",
         "autoplay": "Autoplay",
         "change_slide_every": "Change slide every"
+      },
+      "content": {
+        "label": "Content",
+        "title": "Title",
+        "subheading": "Subheading"
       }
     }
   }

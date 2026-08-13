@@ -53,6 +53,11 @@
         "per_page_mobile": "Éléments par page sur mobile",
         "autoplay": "Lecture automatique",
         "change_slide_every": "Changer de diapositive toutes les"
+      },
+      "content": {
+        "label": "Contenu",
+        "title": "Titre",
+        "subheading": "Sous-titre"
       }
     }
   }
