@@ -8,7 +8,14 @@
   {% endif %}
   data-product-card="{{ block.settings.product_card_style }}"
 >
- Recently viewed
+  <div class="head">
+    <h2>Title</h2>
+    <p>Subheading</p>
+  </div>
+  <div class="main-content">
+    Cards go here
+    {% render 'snippet.product-card' %}
+  </div>
 </deja-vu>
 
 {% schema %}

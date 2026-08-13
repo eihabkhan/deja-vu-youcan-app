@@ -1,3 +1,15 @@
-<script defer>
-  console.log("Carouse logic goes here")
+<script defer>  
+  if (!customElements.get('deja-vu')) {
+    class DejaVu extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        console.log('carousel logic goes here');
+      }
+    }
+
+    customElements.define('deja-vu', DejaVu);
+  }
 </script>
