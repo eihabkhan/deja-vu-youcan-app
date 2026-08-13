@@ -111,6 +111,38 @@
       "content": "t:recently_viewed.settings.layout.label"
     },
     {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "t:recently_viewed.settings.layout.heading_alignment.label",
+      "options": [
+          {
+              "value": "start",
+              "label": "t:recently_viewed.settings.layout.heading_alignment.start"
+          },
+          {
+              "value": "center",
+              "label": "t:recently_viewed.settings.layout.heading_alignment.center"
+          }
+      ],
+      "default": "start"
+    },
+    {
+      "type": "range",
+      "id": "cards_gap",
+      "min": 4,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "t:recently_viewed.settings.layout.cards_gap",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_current_product",
+      "label": "t:recently_viewed.settings.layout.hide_current_product",
+      "default": true
+    },
+    {
       "type": "header",
       "content": "t:recently_viewed.settings.typography.label"
     },
