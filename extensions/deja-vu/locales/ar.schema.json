@@ -10,9 +10,8 @@
       },
       "colors": {
         "label": "الألوان",
-        "background_color": "لون الخلفية",
-        "title_color": "لون العنوان",
-        "subheading_color": "لون العنوان الفرعي"
+        "text_color": "لون النص",
+        "background_color": "لون الخلفية"
       },
       "layout": {
         "label": "التخطيط",

@@ -10,9 +10,8 @@
       },
       "colors": {
         "label": "Colors",
-        "background_color": "Background color",
-        "title_color": "Title color",
-        "subheading_color": "Subheading color"
+        "text_color": "Text color",
+        "background_color": "Background color"
       },
       "layout": {
         "label": "Layout",
