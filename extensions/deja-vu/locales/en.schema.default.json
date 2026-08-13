@@ -3,19 +3,47 @@
     "label": "Recently viewed products",
     "settings": {
       "spacing": {
-        "label": "Spacing"
+        "label": "Spacing",
+        "vertical": "Vertical spacing",
+        "horizontal": "Horizontal spacing"
       },
       "colors": {
-        "label": "Colors"
+        "label": "Colors",
+        "background_color": "Background color",
+        "title_color": "Title color",
+        "subheading_color": "Subheading color"
       },
       "layout": {
-        "label": "Layout"
+        "label": "Layout",
+        "heading_alignment": {
+          "label": "Heading alignment",
+          "start": "Start",
+          "center": "Center"
+        },
+        "cards_gap": "Cards gap",
+        "hide_current_product": "Hide current product"
       },
       "typography": {
-        "label": "Typography"
+        "label": "Typography",
+        "title_size": "Title Size",
+        "subheading_size": "Subheading Size",
+        "body_size": "Body Size",
+        "title_font_family": "Title font family",
+        "body_font_family": "Body font family"
       },
       "product_cards": {
-        "label": "Product Cards"
+        "label": "Product Cards",
+        "style": {
+          "label": "Style",
+          "classic": "Classic",
+          "modern": "Modern",
+          "minimal": "Minimal"
+        },
+        "border_radius": "Border radius",
+        "image_ratio": "Image ratio",
+        "show_product_price": "Show product price",
+        "show_compare_at_price": "Show compare at price",
+        "show_second_image_on_hover": "Show second image on hover"
       },
       "carousel": {
         "label": "Carousel"
