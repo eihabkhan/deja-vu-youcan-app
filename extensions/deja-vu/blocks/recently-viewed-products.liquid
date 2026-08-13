@@ -1,4 +1,9 @@
-{% render 'style.config' %}
+{% render 'style.typography' %}
+{% render 'style.vars' %}
+
+{% render 'style.app' %}
+
+{% render 'js.app' %}
 
 <deja-vu
   class="recently-viewed"
@@ -14,8 +19,6 @@
 {
   "label": "t:recently_viewed.label",
   "target": "section",
-  "javascript": "deja-vu.js",
-  "stylesheet": "deja-vu.css",
   "settings": [
     {
       "type": "header",
