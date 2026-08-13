@@ -47,7 +47,11 @@
         "show_second_image_on_hover": "Afficher la deuxième image au survol"
       },
       "carousel": {
-        "label": "Carrousel"
+        "label": "Carrousel",
+        "per_page": "Éléments par page",
+        "per_page_mobile": "Éléments par page sur mobile",
+        "autoplay": "Lecture automatique",
+        "change_slide_every": "Changer de diapositive toutes les"
       }
     }
   }

@@ -47,7 +47,11 @@
         "show_second_image_on_hover": "Show second image on hover"
       },
       "carousel": {
-        "label": "Carousel"
+        "label": "Carousel",
+        "per_page": "Per page",
+        "per_page_mobile": "Per page mobile",
+        "autoplay": "Autoplay",
+        "change_slide_every": "Change slide every"
       }
     }
   }

@@ -47,7 +47,11 @@
         "show_second_image_on_hover": "إظهار الصورة الثانية عند التمرير"
       },
       "carousel": {
-        "label": "سلايدر"
+        "label": "سلايدر",
+        "per_page": "عدد العناصر في الصفحة",
+        "per_page_mobile": "عدد العناصر في الصفحة على الهاتف",
+        "autoplay": "التشغيل التلقائي",
+        "change_slide_every": "تغيير الشريحة كل"
       }
     }
   }
