@@ -37,7 +37,7 @@
 
     {% if block.settings.spacing_unit == '%' %}
       --vertical-spacing: {{ block.settings.vertical_spacing_percent }}{{ block.settings.spacing_unit }};
-      --horizontal-spacing: {{ block.settings.horizontal_spacing_vertical_spacing_percent }}{{ block.settings.spacing_unit }}
+      --horizontal-spacing: {{ block.settings.horizontal_spacing_percent }}{{ block.settings.spacing_unit }}
     {% endif %}
   }
 </style>
