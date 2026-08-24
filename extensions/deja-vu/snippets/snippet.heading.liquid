@@ -1,10 +1,10 @@
 {% if title or subheading %}
-  <div class="deja-vu-head">
+  <div class="dv-heading">
     {% if title %}
-      <h2>{{ title }}</h2>
+      <h2 class="dv-heading__title">{{ title }}</h2>
     {% endif %}
     {% if subheading %}
-      <p>{{ subheading }}</p>
+      <p class="dv-heading__subheading">{{ subheading }}</p>
     {% endif %}
   </div>
 {% endif %}

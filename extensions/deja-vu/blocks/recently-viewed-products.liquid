@@ -2,7 +2,7 @@
 {% render 'js.app' %}
 
 <deja-vu
-  class="recently-viewed"
+  id="dv-{{ block.id }}"
   {% if block.settings.hide_current_product %}
     hide-current-product
   {% endif %}
