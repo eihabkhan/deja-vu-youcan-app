@@ -11,6 +11,41 @@
     background-color: var(--bg-color);
     color: var(--text-color);
 
+    &[data-dv-style="classic"] {
+      --card-border-color: color-mix(in srgb, var(--text-color) 12%, transparent);
+      --image-margin: 0px;
+      --content-padding: 16px;
+      --image-radius: 0px;
+
+      .dv-product__images {
+        border-inline: 0px !important;
+        border-block-start: 0px !important;
+      }
+    }
+
+    &[data-dv-style="modern"] {
+      --card-border-color: color-mix(in srgb, var(--text-color) 12%, transparent);
+      --image-margin: 8px;
+      --content-padding: 8px;
+      --image-radius: calc(var(--product-card-radius) - var(--image-margin));
+
+      .dv-product__price {
+        flex-direction: row !important;
+        align-items: center;
+
+        .dv-product__current-price {
+          order: -1 !important;
+        }
+      }
+    }
+
+    &[data-dv-style="minimal"] {
+    }
+
+    &[data-dv-style="polaroid"] {
+    }
+
+
     .dv-heading {
       display: flex;
       flex-direction: column;
@@ -38,16 +73,8 @@
 
     .dv-main {
       .dv-product {
-        --card-border-color: color-mix(in srgb, var(--text-color) 12%, transparent); 
         --card-placeholder-bg: color-mix(in srgb, var(--text-color) 4%, transparent);
         --card-placeholder-fg: color-mix(in srgb, var(--text-color) 32%, white);
-  
-        --image-margin: 0px;
-        --content-padding: 0px;
-        --card-fg: 0px;
-        --card-bg: 0px;
-        --card-gap-y: 0px;
-        --image-radius: 0px;
   
         display: flex;
         flex-direction: column;
@@ -57,18 +84,19 @@
         border: 1px solid var(--card-border-color);
   
         .dv-product__images {
-          margin: var(--image-margin);
+          margin: var(--image-margin) var(--image-margin) 0;
           display: flex;
           align-items: center;
           justify-content: center;
           background-color: var(--card-placeholder-bg);
           aspect-ratio: var(--product-card-ratio);
-          border-bottom: 1px solid var(--card-border-color);
+          border: 1px solid var(--card-border-color);
           color: var(--card-placeholder-fg);
+          border-radius: var(--image-radius);
         }
   
         .dv-product__info {
-          padding: 16px;
+          padding: var(--content-padding);
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -110,11 +138,6 @@
           }
         }
       }
-
-      &[data-dv-style="classic"] {}
-      &[data-dv-style="modern"] {}
-      &[data-dv-style="minimal"] {}
-      &[data-dv-style="polaroid"] {}
     }
   }
 </style>
