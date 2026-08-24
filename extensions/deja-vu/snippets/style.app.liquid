@@ -44,17 +44,15 @@
         --content-padding: 0px;
         --card-fg: 0px;
         --card-bg: 0px;
-        --card-gap: 0px;
-        --card-radius: 0px;
+        --card-gap-y: 0px;
         --image-radius: 0px;
   
         display: flex;
         flex-direction: column;
         width: 300px;
-        border-radius: 12px;
+        border-radius: var(--product-card-radius);
         overflow: hidden;
         border: 1px solid var(--card-border-color);
-        font-size: var(--);
   
         .dv-product__images {
           margin: var(--image-margin);
@@ -62,7 +60,7 @@
           align-items: center;
           justify-content: center;
           background-color: var(--card-placeholder-bg);
-          aspect-ratio: 1 / 1;
+          aspect-ratio: var(--product-card-ratio);
           border-bottom: 1px solid var(--card-border-color);
           color: var(--card-placeholder-fg);
         }

@@ -2,7 +2,6 @@
 {% render 'js.app' %}
 
 <deja-vu
-  id="dv-{{ block.id }}"
   {% if block.settings.hide_current_product %}
     hide-current-product
   {% endif %}
@@ -446,6 +445,10 @@
           {
             "value": "3 / 4",
             "label": "3:4"
+          },
+          {
+            "value": "4 / 3",
+            "label": "4:3"
           },
           {
             "value": "2 / 3",
