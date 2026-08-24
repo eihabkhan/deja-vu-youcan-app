@@ -8,22 +8,30 @@
     flex-direction: column;
     gap: var(--heading-bottom-spacing);
 
-    .dv-heading__title {
-      {% unless block.settings.title_font_family == 'inherit' %}
-        font-family: var(--title-font);
-      {% endunless %}
-      {% unless block.settings.title_size == 'inherit' %}
-        font-size: var(--title-size);
-      {% endunless %}
+    .dv-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: {{ block.settings.heading_alignment }};
+      gap: var(--subheading-top-spacing);
+
+      .dv-heading__title {
+        {% unless block.settings.title_font_family == 'inherit' %}
+          font-family: var(--title-font);
+        {% endunless %}
+        {% unless block.settings.title_size == 'inherit' %}
+          font-size: var(--title-size);
+        {% endunless %}
+      }
+  
+      .dv-heading__subheading {
+        {% unless block.settings.body_font_family == 'inherit' %}
+          font-family: var(--body-font);
+        {% endunless %}
+        {% unless block.settings.subheading_size == 'inherit' %}
+          font-size: var(--subheading-size);
+        {% endunless %}
+      }
     }
 
-    .dv-heading__subheading {
-      {% unless block.settings.body_font_family == 'inherit' %}
-        font-family: var(--body-font);
-      {% endunless %}
-      {% unless block.settings.subheading_size == 'inherit' %}
-        font-size: var(--subheading-size);
-      {% endunless %}
-    }
   }
 </style>
