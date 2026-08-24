@@ -40,7 +40,8 @@
           "label": "Card Style",
           "classic": "Classic",
           "modern": "Modern",
-          "minimal": "Minimal"
+          "minimal": "Minimal",
+          "polaroid": "Polaroid"
         },
         "border_radius": "Border radius",
         "image_ratio": "Image ratio",

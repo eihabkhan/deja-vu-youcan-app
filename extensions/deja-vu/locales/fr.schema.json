@@ -40,7 +40,8 @@
           "label": "Style de carte",
           "classic": "Classique",
           "modern": "Moderne",
-          "minimal": "Minimal"
+          "minimal": "Minimal",
+          "polaroid": "Polaroid"
         },
         "border_radius": "Arrondi des coins",
         "image_ratio": "Format de l'image",

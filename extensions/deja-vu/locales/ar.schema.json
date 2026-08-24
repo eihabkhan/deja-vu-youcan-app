@@ -40,7 +40,8 @@
           "label": "نمط البطاقة",
           "classic": "كلاسيكي",
           "modern": "عصري",
-          "minimal": "بسيط"
+          "minimal": "بسيط",
+          "polaroid": "بولارويد"
         },
         "border_radius": "استدارة الحواف",
         "image_ratio": "نسبة الصورة",
