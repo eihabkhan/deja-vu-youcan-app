@@ -468,7 +468,11 @@
       "type": "checkbox",
       "id": "show_compare_at_price",
       "label": "t:recently_viewed.settings.product_cards.show_compare_at_price",
-      "default": true
+      "default": true,
+      "visible_if": {
+        "setting_id": "show_product_price",
+        "value": true
+      }
     },
     {
       "type": "checkbox",

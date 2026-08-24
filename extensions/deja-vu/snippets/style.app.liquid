@@ -12,7 +12,7 @@
     .dv-heading {
       display: flex;
       flex-direction: column;
-      align-items: {{ block.settings.heading_alignment }};
+      align-items: var(--heading-alignment);
       gap: var(--subheading-top-spacing);
 
       .dv-heading__title {
@@ -34,72 +34,87 @@
       }
     }
 
-    .dv-product {
-      --card-border-color: color-mix(in srgb, var(--text-color) 12%, transparent); 
-      --card-placeholder-bg: color-mix(in srgb, var(--text-color) 4%, transparent);
-      --card-placeholder-fg: color-mix(in srgb, var(--text-color) 32%, white);
-
-      display: flex;
-      flex-direction: column;
-      width: 300px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--card-border-color);
-      font-size: var(--);
-
-      .dv-product__images {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--card-placeholder-bg);
-        aspect-ratio: 1 / 1;
-        border-bottom: 1px solid var(--card-border-color);
-        color: var(--card-placeholder-fg);
-      }
-
-      .dv-product__info {
-        min-height: 128px;
-        padding: 16px;
+    .dv-main {
+      .dv-product {
+        --card-border-color: color-mix(in srgb, var(--text-color) 12%, transparent); 
+        --card-placeholder-bg: color-mix(in srgb, var(--text-color) 4%, transparent);
+        --card-placeholder-fg: color-mix(in srgb, var(--text-color) 32%, white);
+  
+        --image-margin: 0px;
+        --content-padding: 0px;
+        --card-fg: 0px;
+        --card-bg: 0px;
+        --card-gap: 0px;
+        --card-radius: 0px;
+        --image-radius: 0px;
+  
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        gap: 16px;
-
-        .dv-product__name,
-        .dv-product__current-price,
-        .dv-product__compare-at {
-          {% unless block.settings.body_font_family == 'inherit' %}
-            font-family: var(--body-font);
-          {% endunless %}
-          {% unless block.settings.body_size == 'inherit' %}
-            font-size: var(--body-size);
-          {% endunless %}
+        width: 300px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--card-border-color);
+        font-size: var(--);
+  
+        .dv-product__images {
+          margin: var(--image-margin);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--card-placeholder-bg);
+          aspect-ratio: 1 / 1;
+          border-bottom: 1px solid var(--card-border-color);
+          color: var(--card-placeholder-fg);
         }
-
-        .dv-product__name {
-          font-weight: 500;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 3;
-          line-clamp: 3;
-          overflow: hidden;
-        }
-
-        .dv-product__price {
+  
+        .dv-product__info {
+          padding: 16px;
           display: flex;
           flex-direction: column;
-          gap: 4px;
-
-          .dv-product__current-price {
-          }
-
+          justify-content: space-between;
+          gap: 16px;
+  
+          .dv-product__name,
+          .dv-product__current-price,
           .dv-product__compare-at {
-            font-size: 0.8em;
-            text-decoration: line-through;
-            opacity: 0.7;
+            {% unless block.settings.body_font_family == 'inherit' %}
+              font-family: var(--body-font);
+            {% endunless %}
+            {% unless block.settings.body_size == 'inherit' %}
+              font-size: var(--body-size);
+            {% endunless %}
+          }
+  
+          .dv-product__name {
+            font-weight: 500;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            overflow: hidden;
+          }
+  
+          .dv-product__price {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+  
+            .dv-product__current-price {
+            }
+  
+            .dv-product__compare-at {
+              font-size: 0.8em;
+              text-decoration: line-through;
+              opacity: 0.7;
+            }
           }
         }
       }
+
+      &[data-dv-style="classic"] {}
+      &[data-dv-style="modern"] {}
+      &[data-dv-style="minimal"] {}
+      &[data-dv-style="polaroid"] {}
     }
   }
 </style>

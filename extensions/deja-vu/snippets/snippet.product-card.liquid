@@ -4,10 +4,16 @@
   </div>
   <div class="dv-product__info">
     <p class="dv-product__name">Product name</p>
-    <div class="dv-product__price">
-      <span class="dv-product__compare-at">{{ 49.99 | money}}</span>
-      <span class="dv-product__current-price">{{ 39.99 | money }}</span>
-    </div>
+    {% if block.settings.show_product_price %}
+      <div class="dv-product__price">
+        {% if block.settings.show_compare_at_price %}
+          <span class="dv-product__compare-at">{{ 49.99 | money}}</span>
+        {% endif %}
+        {% if block.settings.show_product_price %}
+          <span class="dv-product__current-price">{{ 39.99 | money }}</span>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
 </div>
 
