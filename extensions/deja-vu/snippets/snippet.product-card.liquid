@@ -1,3 +1,12 @@
-<span>
-  Product Card
-</span>
+<div class="dv-product">
+  <div class="dv-product__images">
+   {% render 'snippet.placeholder', size: 48 %}
+  </div>
+  <div class="dv-product__info">
+    <p class="dv-product__name">Product name</p>
+    <div class="dv-product__price">
+      <span class="dv-product__compare-at">{{ 49.99 | money}}</span>
+      <span class="dv-product__current-price">{{ 39.99 | money }}</span>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,7 @@
 
 <style>
   deja-vu {
+    margin-block: 40px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -33,5 +34,60 @@
       }
     }
 
+    .dv-product {
+      --card-border-color: color-mix(in srgb, var(--text-color) 12%, transparent); 
+      --card-placeholder-bg: color-mix(in srgb, var(--text-color) 4%, transparent);
+      --card-placeholder-fg: color-mix(in srgb, var(--text-color) 32%, white);
+
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--card-border-color);
+
+      .dv-product__images {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--card-placeholder-bg);
+        aspect-ratio: 1 / 1;
+        border-bottom: 1px solid var(--card-border-color);
+        color: var(--card-placeholder-fg);
+      }
+
+      .dv-product__info {
+        min-height: 128px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+
+        .dv-product__name {
+          font-weight: 500;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          line-clamp: 3;
+          overflow: hidden;
+        }
+
+        .dv-product__price {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+
+          .dv-product__current-price {
+          }
+
+          .dv-product__compare-at {
+            font-size: 14px;
+            text-decoration: line-through;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
   }
 </style>
