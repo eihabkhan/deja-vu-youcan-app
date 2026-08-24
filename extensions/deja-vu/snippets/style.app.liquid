@@ -16,6 +16,7 @@
       --image-margin: 0px;
       --content-padding: 16px;
       --image-radius: 0px;
+      --content-gap: 16px;
 
       .dv-product__images {
         border-inline: 0px !important;
@@ -28,6 +29,7 @@
       --image-margin: 8px;
       --content-padding: 8px;
       --image-radius: calc(var(--product-card-radius) - var(--image-margin));
+      --content-gap: 16px;
 
       .dv-product__price {
         flex-direction: row !important;
@@ -40,6 +42,21 @@
     }
 
     &[data-dv-style="minimal"] {
+      --card-border-color: transparent;
+      --image-margin: 0px;
+      --content-padding: 16px 0px;
+      --image-radius: var(--product-card-radius);
+      --content-gap: 4px;
+
+      .dv-product__price {
+        flex-direction: row !important;
+        align-items: center;
+
+        .dv-product__current-price {
+          order: -1 !important;
+        }
+      }
+
     }
 
     &[data-dv-style="polaroid"] {
@@ -100,7 +117,7 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          gap: 16px;
+          gap: var(--content-gap);
   
           .dv-product__name,
           .dv-product__current-price,
