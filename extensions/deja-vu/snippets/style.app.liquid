@@ -3,6 +3,8 @@
 
 <style>
   deja-vu {
+    --card-border-color: color-mix(in srgb, var(--text-color) 14%, transparent);
+
     padding: var(--vertical-spacing) var(--horizontal-spacing);
     width: 100%;
     display: flex;
@@ -12,7 +14,6 @@
     color: var(--text-color);
 
     &[data-dv-style="classic"] {
-      --card-border-color: color-mix(in srgb, var(--text-color) 12%, transparent);
       --image-margin: 0px;
       --content-padding: 16px;
       --image-radius: 0px;
@@ -25,7 +26,6 @@
     }
 
     &[data-dv-style="modern"] {
-      --card-border-color: color-mix(in srgb, var(--text-color) 12%, transparent);
       --image-margin: 8px;
       --content-padding: 8px;
       --image-radius: calc(var(--product-card-radius) - var(--image-margin));
@@ -59,7 +59,6 @@
     }
 
     &[data-dv-style="polaroid"] {
-      --card-border-color: color-mix(in srgb, var(--text-color) 12%, transparent);
       --image-margin: 16px;
       --content-padding: 16px;
       --image-radius: calc(var(--product-card-radius) - var(--image-margin));
