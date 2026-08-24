@@ -56,12 +56,25 @@
           order: -1 !important;
         }
       }
-
     }
 
     &[data-dv-style="polaroid"] {
-    }
+      --card-border-color: color-mix(in srgb, var(--text-color) 12%, transparent);
+      --image-margin: 8px;
+      --content-padding: 8px;
+      --image-radius: calc(var(--product-card-radius) - var(--image-margin));
+      --content-gap: 16px;
 
+      .dv-product__info {
+        flex-direction: row !important; 
+        align-items: flex-end;
+        
+        .dv-product__price {
+          font-size: 13px;
+          align-items: flex-end;
+        }
+      }
+    }
 
     .dv-heading {
       display: flex;
