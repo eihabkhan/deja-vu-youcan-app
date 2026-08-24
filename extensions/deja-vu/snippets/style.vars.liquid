@@ -13,12 +13,16 @@
     {% unless block.settings.body_font_family == 'inherit' %}
       --body-font: {{ block.settings.body_font_family }};
     {% endunless %}
+    {% unless block.settings.body_size == 'inherit' %}
+      --body-size: {{ block.settings.body_size }};
+    {% endunless %}
     {% unless block.settings.title_size == 'inherit' %}
       --title-size: {{ block.settings.title_size }};
     {% endunless %}
     {% unless block.settings.subheading_size == 'inherit' %}
       --subheading-size: {{ block.settings.subheading_size }};
     {% endunless %}
+
 
     --product-card-radius: {{ block.settings.product_card_border_radius }}px;
     --product-card-ratio: {{ block.settings.product_card_image_ratio }};
