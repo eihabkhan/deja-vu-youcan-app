@@ -7,7 +7,7 @@
   {% endif %}
   data-product-card-style="{{ block.settings.product_card_style }}"
 >
-  {% 
+  {%
     render 'snippet.heading',
     title: block.settings.title,
     subheading: block.settings.subheading
@@ -57,6 +57,26 @@
     {
       "type": "header",
       "content": "t:recently_viewed.settings.layout.label"
+    },
+    {
+      "type": "range",
+      "id": "heading_bottom_spacing",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "t:recently_viewed.settings.spacing.heading_bottom_spacing",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "subheading_top_spacing",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "t:recently_viewed.settings.spacing.subheading_top_spacing",
+      "default": 8
     },
     {
       "type": "select",
@@ -540,26 +560,6 @@
           }
       ],
       "default": "px"
-    },
-    {
-      "type": "range",
-      "id": "heading_bottom_spacing",
-      "min": 0,
-      "max": 80,
-      "step": 4,
-      "unit": "px",
-      "label": "t:recently_viewed.settings.spacing.heading_bottom_spacing",
-      "default": 24
-    },
-    {
-      "type": "range",
-      "id": "subheading_top_spacing",
-      "min": 0,
-      "max": 40,
-      "step": 4,
-      "unit": "px",
-      "label": "t:recently_viewed.settings.spacing.subheading_top_spacing",
-      "default": 8
     },
     {
       "type": "range",
