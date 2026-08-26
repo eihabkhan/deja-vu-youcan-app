@@ -9,18 +9,16 @@
           
           this.currentProduct = null
           this.viewedProducts = new Map()
+
+          this.productCardTemplate = this.querySelector('template[dv-product="card"]');
         }
   
         connectedCallback() {
           this.viewedProducts = this.getViewedProducts()
-
-          const product = JSON.parse({{ product | json }});
-
-          if (!product) return;
-          
           this.currentProduct = this.initCurrentProduct()
           
           this.save()
+          this.render(this.viewedProducts)
 
           {% comment %} 
             list products in dom
@@ -38,7 +36,7 @@
           product.price = "{{ product.price | money }}";
 
           {% if product.compare_at_price %}
-            product.compareAtPrice = {{ product.compare_at_price | money }};
+            product.compareAtPrice = "{{ product.compare_at_price | money }}";
           {% else %}
             product.compareAtPrice = null;
           {% endif %}
@@ -58,6 +56,51 @@
           this.viewedProducts.set(this.currentProduct.slug, this.currentProduct);
 
           localStorage.setItem(this.STORAGE_KEY, JSON.stringify([...this.viewedProducts]));
+        }
+
+        render(products) {
+          const fragment = new DocumentFragment();
+
+          products.forEach(product => {
+            const productCard = this.createProductCard(product)
+            
+            fragment.append(productCard)
+          }) 
+
+          this.querySelector('[dv-product="list"]').replaceChildren(fragment)
+        }
+
+        createProductCard(product) {
+          const card = this.productCardTemplate.content.cloneNode(true)
+          
+          if (!card) return
+          
+          const images = card.querySelector('[dv-product="images"]')
+          const name = card.querySelector('[dv-product="name"]')
+          const price = card.querySelector('[dv-product="price"]')
+          const compareAt = card.querySelector('[dv-product="compare-at"]')
+
+          if (images) this.updateItemImages(images, product.url, product.images)
+          if (name) this.updateItemName(name, product.url, product.name)
+          if (price) this.updateItemPrice(price, product.price)
+          if (compareAt) this.updateItemCompareAt(compareAt, product.compareAtPrice)
+
+          return card
+        }
+
+        updateItemImages(element, url, images) {
+          element.href = url
+          // todo: update images
+        }
+        updateItemName(element, url, name) {
+          element.href = url
+          element.textContent = name
+        }
+        updateItemPrice(element, price) {
+          element.textContent = price
+        }
+        updateItemCompareAt(element, compareAt) {
+          element.textContent = compareAt
         }
       }
   

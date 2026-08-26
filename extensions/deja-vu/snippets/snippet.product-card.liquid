@@ -1,35 +1,24 @@
-<div class="dv-product">
-  <div class="dv-product__images">
-   {% render 'snippet.placeholder', size: 48 %}
+<template dv-product="card">
+  <div class="dv-product">
+    <a class="dv-product__images" dv-product="images">
+     {% render 'snippet.placeholder', size: 48 %}
+    </a>
+    <div class="dv-product__info">
+      <a class="dv-product__name" dv-product="name">Product name</a>
+      {% if block.settings.show_product_price %}
+        <div class="dv-product__price">
+          {% if block.settings.show_compare_at_price %}
+            <span class="dv-product__compare-at" dv-product="compare-at">
+              {{ 49.99 | money}}
+            </span>
+          {% endif %}
+          {% if block.settings.show_product_price %}
+            <span class="dv-product__current-price" dv-product="price">
+              {{ 39.99 | money }}
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
   </div>
-  <div class="dv-product__info">
-    <p class="dv-product__name">Product name</p>
-    {% if block.settings.show_product_price %}
-      <div class="dv-product__price">
-        {% if block.settings.show_compare_at_price %}
-          <span class="dv-product__compare-at">{{ 49.99 | money}}</span>
-        {% endif %}
-        {% if block.settings.show_product_price %}
-          <span class="dv-product__current-price">{{ 39.99 | money }}</span>
-        {% endif %}
-      </div>
-    {% endif %}
-  </div>
-</div>
-
-{% comment %} 
-  nothing will change from the product markup
-  data attr to know which style is active
-  for each style set the following css vars:
-    - padding for the image
-    - padding for the content
-    - background of the card
-    - gap of content and card
-    - border radius of card
-    - border radius of image
-    - alignment of pricing (horizontal in minimal)
-
-
-    todo:
-    add polaroid style: https://www.figma.com/design/fgi08y8bu0ScszZCruFN4y/Store-front-apps?node-id=694-9&t=97pwBuJTxtOT7avs-11
-{% endcomment %}
+</template>

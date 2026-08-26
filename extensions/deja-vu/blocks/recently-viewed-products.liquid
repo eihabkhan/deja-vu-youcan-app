@@ -1,5 +1,4 @@
 {% render 'style.app' %}
-{% render 'js.app' %}
 
 <deja-vu
   {% if block.settings.hide_current_product %}
@@ -12,10 +11,12 @@
     title: block.settings.title,
     subheading: block.settings.subheading
   %}
-  <div class="dv-main">
+  <div class="dv-main" dv-product="list">
     {% render 'snippet.product-card' %}
   </div>
 </deja-vu>
+
+{% render 'js.app' %}
 
 {% schema %}
 {
