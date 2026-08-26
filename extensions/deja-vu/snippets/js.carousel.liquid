@@ -7,9 +7,10 @@
         if (!this.list) return;
 
         this.index = 0;
+        this.targetIndex = 0;
         this.perPage = 1;
         this.items = [];
-        this.ignoreScroll = false;
+        this.isAnimating = false;
 
         this.arrows = {
           previous: this.querySelector('[dv-carousel="arrow-previous"]'),
@@ -20,10 +21,11 @@
 
         const { signal } = this.controller;
 
-        this.arrows.previous?.addEventListener('click', () => this.goTo(this.index - 1), { signal });
-        this.arrows.next?.addEventListener('click', () => this.goTo(this.index + 1), { signal });
+        this.arrows.previous?.addEventListener('click', () => this.goTo(this.targetIndex - 1), { signal });
+        this.arrows.next?.addEventListener('click', () => this.goTo(this.targetIndex + 1), { signal });
 
         this.list.addEventListener('scroll', () => this.onScroll(), { signal, passive: true });
+        this.list.addEventListener('scrollend', () => (this.isAnimating = false), { signal });
         window.addEventListener('resize', () => this.updateLayout(), { signal });
 
         this.updateLayout();
@@ -31,6 +33,7 @@
 
       disconnectedCallback() {
         this.controller?.abort();
+        clearTimeout(this.settleFallback);
       }
 
       updateLayout() {
@@ -43,6 +46,7 @@
 
         if (!enabled) {
           this.index = 0;
+          this.targetIndex = 0;
 
           return;
         }
@@ -58,28 +62,32 @@
         return getComputedStyle(this).direction === 'rtl';
       }
 
+      get stride() {
+        if (!this.items.length) return 0;
+
+        const first = this.items[0].getBoundingClientRect();
+
+        if (this.items.length < 2) return first.width;
+
+        return Math.abs(this.items[1].getBoundingClientRect().left - first.left);
+      }
+
       goTo(index) {
         index = Math.min(Math.max(index, 0), this.maxIndex);
 
-        const item = this.items[index];
+        if (!this.items[index]) return;
 
-        if (!item) return;
+        this.targetIndex = index;
+        this.setIndex(index);
 
-        const listEdge = this.list.getBoundingClientRect();
-        const itemEdge = item.getBoundingClientRect();
-
-        this.ignoreScroll = true;
-        this.list.scrollBy({
-          left: this.isRTL ? itemEdge.right - listEdge.right : itemEdge.left - listEdge.left,
+        this.isAnimating = true;
+        this.list.scrollTo({
+          left: index * this.stride * (this.isRTL ? -1 : 1),
           behavior: 'smooth',
         });
 
-        this.setIndex(index);
-
-        this.list.addEventListener('scrollend', () => (this.ignoreScroll = false), { once: true });
-
-        clearTimeout(this.scrollEndFallback);
-        this.scrollEndFallback = setTimeout(() => (this.ignoreScroll = false), 700);
+        clearTimeout(this.settleFallback);
+        this.settleFallback = setTimeout(() => (this.isAnimating = false), 700);
       }
 
       setIndex(index) {
@@ -90,29 +98,20 @@
       }
 
       onScroll() {
-        if (this.ignoreScroll) return;
+        if (this.isAnimating) return;
 
         cancelAnimationFrame(this.scrollFrame);
 
         this.scrollFrame = requestAnimationFrame(() => {
-          const rtl = this.isRTL;
-          const listEdge = this.list.getBoundingClientRect();
-          const edge = rtl ? listEdge.right : listEdge.left;
+          const stride = this.stride;
 
-          let nearest = 0;
-          let shortest = Infinity;
+          if (!stride) return;
 
-          this.items.forEach((item, i) => {
-            const rect = item.getBoundingClientRect();
-            const distance = Math.abs((rtl ? rect.right : rect.left) - edge);
+          const index = Math.min(Math.round(Math.abs(this.list.scrollLeft) / stride), this.maxIndex);
 
-            if (distance < shortest) {
-              shortest = distance;
-              nearest = i;
-            }
-          });
+          this.targetIndex = index;
 
-          if (nearest !== this.index) this.setIndex(nearest);
+          if (index !== this.index) this.setIndex(index);
         });
       }
     }
