@@ -11,9 +11,11 @@
     title: block.settings.title,
     subheading: block.settings.subheading
   %}
-  <div class="dv-main" dv-product="list">
-    {% render 'snippet.product-card' %}
-  </div>
+  <dv-carousel>
+    <div dv-carousel="list" dv-product="list">
+      {% render 'snippet.product-card' %}
+    </div>
+  </dv-carousel>
 </deja-vu>
 
 {% render 'js.app' %}

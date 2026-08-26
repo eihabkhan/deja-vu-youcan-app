@@ -1,0 +1,28 @@
+<style>
+  dv-carousel {
+    [dv-carousel="list"] {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      gap: var(--cards-gap, 0px);
+      display: flex;
+      overflow: scroll hidden;
+      scroll-snap-type: x mandatory;
+
+      [dv-carousel="item"] {
+        width: calc((var(--item-size, 100%) - (var(--cards-gap, 0px) * (var(--per-page) - 1))) / var(--per-page));
+        min-width: calc((var(--item-size, 100%) - (var(--cards-gap, 0px) * (var(--per-page) - 1))) / var(--per-page));
+      }
+    }
+  
+    [dv-carousel="item"] {
+      scroll-snap-align: none;
+      scroll-snap-stop: always;
+
+      &[data-snap] {
+        scroll-snap-align: start;
+      }
+    }
+  }
+</style>
