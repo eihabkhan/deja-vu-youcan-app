@@ -2,6 +2,8 @@
   <script defer>
     if (!customElements.get('deja-vu')) {
       class DejaVu extends HTMLElement {
+        static observedAttributes = ["hide-current-product"];
+
         constructor() {
           super();
   
@@ -18,7 +20,7 @@
           this.currentProduct = this.initCurrentProduct()
           
           this.save()
-          this.render(this.viewedProducts)
+          this.render(this.getProductsToRender())
         }
 
         initCurrentProduct() {
@@ -43,11 +45,22 @@
           return new Map(JSON.parse(localStorage.getItem(this.STORAGE_KEY)));
         }
 
+        getProductsToRender() {
+          const products = [...this.viewedProducts.values()].reverse()
+
+          if (!this.hasAttribute('hide-current-product') || !this.currentProduct) {
+            return products
+          }
+
+          return products.filter(product => product.slug !== this.currentProduct.slug)
+        }
+
         save() {
           if (!this.currentProduct) {
             return
           }
 
+          this.viewedProducts.delete(this.currentProduct.slug);
           this.viewedProducts.set(this.currentProduct.slug, this.currentProduct);
 
           localStorage.setItem(this.STORAGE_KEY, JSON.stringify([...this.viewedProducts]));
