@@ -109,16 +109,20 @@
             element.append(img)
           })
         }
+        
         updateItemName(element, url, name) {
           element.href = url
           element.textContent = name
         }
+        
         updateItemPrice(element, price) {
           element.textContent = price
         }
+        
         updateItemCompareAt(element, compareAt) {
           element.textContent = compareAt
         }
+        
         createProductImage(url) {
           const img = document.createElement('img');
             
