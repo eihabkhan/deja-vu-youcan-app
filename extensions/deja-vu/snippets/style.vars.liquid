@@ -42,4 +42,10 @@
       --horizontal-spacing: {{ block.settings.horizontal_spacing_percent }}{{ block.settings.spacing_unit }}
     {% endif %}
   }
+
+  @media (width <= 1024px) {
+    deja-vu {
+      --per-page: var(--per-page-mobile);
+    }
+  }
 </style>

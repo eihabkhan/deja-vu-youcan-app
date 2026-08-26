@@ -139,6 +139,7 @@
           }) 
 
           this.querySelector('[dv-product="list"]').replaceChildren(fragment)
+          this.querySelector('dv-carousel')?.updateLayout?.()
         }
       }
   
