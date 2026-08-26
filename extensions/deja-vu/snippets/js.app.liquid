@@ -19,7 +19,7 @@
           this.viewedProducts = this.getViewedProducts()
           this.currentProduct = this.initCurrentProduct()
           
-          this.save()
+          this.persist()
           this.render(this.getProductsToRender())
         }
 
@@ -53,29 +53,6 @@
           }
 
           return products.filter(product => product.slug !== this.currentProduct.slug)
-        }
-
-        save() {
-          if (!this.currentProduct) {
-            return
-          }
-
-          this.viewedProducts.delete(this.currentProduct.slug);
-          this.viewedProducts.set(this.currentProduct.slug, this.currentProduct);
-
-          localStorage.setItem(this.STORAGE_KEY, JSON.stringify([...this.viewedProducts]));
-        }
-
-        render(products) {
-          const fragment = new DocumentFragment();
-
-          products.forEach(product => {
-            const productCard = this.createProductCard(product)
-            
-            fragment.append(productCard)
-          }) 
-
-          this.querySelector('[dv-product="list"]').replaceChildren(fragment)
         }
 
         createProductCard(product) {
@@ -139,6 +116,29 @@
           img.style.height = "100%"
 
           return img
+        }
+
+                persist() {
+          if (!this.currentProduct) {
+            return
+          }
+
+          this.viewedProducts.delete(this.currentProduct.slug);
+          this.viewedProducts.set(this.currentProduct.slug, this.currentProduct);
+
+          localStorage.setItem(this.STORAGE_KEY, JSON.stringify([...this.viewedProducts]));
+        }
+
+        render(products) {
+          const fragment = new DocumentFragment();
+
+          products.forEach(product => {
+            const productCard = this.createProductCard(product)
+            
+            fragment.append(productCard)
+          }) 
+
+          this.querySelector('[dv-product="list"]').replaceChildren(fragment)
         }
       }
   
