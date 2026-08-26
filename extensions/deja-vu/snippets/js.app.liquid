@@ -130,15 +130,21 @@
         }
 
         render(products) {
+          if (!products.length) {
+            return
+          }
+
           const fragment = new DocumentFragment();
 
           products.forEach(product => {
             const productCard = this.createProductCard(product)
-            
+
             fragment.append(productCard)
-          }) 
+          })
 
           this.querySelector('[dv-product="list"]').replaceChildren(fragment)
+
+          this.removeAttribute('hidden')
           this.querySelector('dv-carousel')?.updateLayout?.()
         }
       }
