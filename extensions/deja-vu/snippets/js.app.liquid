@@ -1,15 +1,67 @@
-<script defer>  
-  if (!customElements.get('deja-vu')) {
-    class DejaVu extends HTMLElement {
-      constructor() {
-        super();
-      }
+{% if template.name == 'product' %}
+  <script defer>
+    if (!customElements.get('deja-vu')) {
+      class DejaVu extends HTMLElement {
+        constructor() {
+          super();
+  
+          this.STORAGE_KEY = 'dv-products'
+          
+          this.currentProduct = null
+          this.viewedProducts = new Map()
+        }
+  
+        connectedCallback() {
+          this.viewedProducts = this.getViewedProducts()
 
-      connectedCallback() {
-        console.log('carousel logic goes here');
+          const product = JSON.parse({{ product | json }});
+
+          if (!product) return;
+          
+          this.currentProduct = this.initCurrentProduct()
+          
+          this.save()
+
+          {% comment %} 
+            list products in dom
+            if the show current product pref is enabled, include it 
+          {% endcomment %}
+        }
+
+        initCurrentProduct() {
+          const product = {}
+          
+          product.slug = "{{ product.slug }}";
+          product.name = "{{ product.name }}";
+          product.images = JSON.parse({{ product.images | slice: 0, 2 | json }});
+          product.url = "{{ product.url }}";
+          product.price = "{{ product.price | money }}";
+
+          {% if product.compare_at_price %}
+            product.compareAtPrice = {{ product.compare_at_price | money }};
+          {% else %}
+            product.compareAtPrice = null;
+          {% endif %}
+
+          return product;
+        }
+
+        getViewedProducts() {
+          return new Map(JSON.parse(localStorage.getItem(this.STORAGE_KEY)));
+        }
+
+        save() {
+          if (!this.currentProduct) {
+            return
+          }
+
+          this.viewedProducts.set(this.currentProduct.slug, this.currentProduct);
+
+          localStorage.setItem(this.STORAGE_KEY, JSON.stringify([...this.viewedProducts]));
+        }
       }
+  
+      customElements.define('deja-vu', DejaVu);
     }
-
-    customElements.define('deja-vu', DejaVu);
-  }
-</script>
+  </script>
+{% endif %}
