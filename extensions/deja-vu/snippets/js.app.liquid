@@ -19,11 +19,6 @@
           
           this.save()
           this.render(this.viewedProducts)
-
-          {% comment %} 
-            list products in dom
-            if the show current product pref is enabled, include it 
-          {% endcomment %}
         }
 
         initCurrentProduct() {
@@ -109,20 +104,20 @@
             element.append(img)
           })
         }
-        
+
         updateItemName(element, url, name) {
           element.href = url
           element.textContent = name
         }
-        
+
         updateItemPrice(element, price) {
           element.textContent = price
         }
-        
+
         updateItemCompareAt(element, compareAt) {
           element.textContent = compareAt
         }
-        
+
         createProductImage(url) {
           const img = document.createElement('img');
             
