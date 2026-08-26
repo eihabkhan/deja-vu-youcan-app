@@ -96,13 +96,15 @@
 
             return
           }
+
+          if(!element.hasAttribute('data-show-second-image')) {
+            element.append(this.createProductImage(images[0]))
+
+            return
+          }
           
           images.forEach(image => {
-            const img = document.createElement('img');
-            
-            img.src = image
-            img.style.width = "100%"
-            img.style.height = "100%"
+            const img = this.createProductImage(image)
 
             element.append(img)
           })
@@ -116,6 +118,15 @@
         }
         updateItemCompareAt(element, compareAt) {
           element.textContent = compareAt
+        }
+        createProductImage(url) {
+          const img = document.createElement('img');
+            
+          img.src = url
+          img.style.width = "100%"
+          img.style.height = "100%"
+
+          return img
         }
       }
   
