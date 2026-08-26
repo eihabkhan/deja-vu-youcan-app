@@ -52,9 +52,7 @@
       "carousel": {
         "label": "Carrousel",
         "per_page": "Éléments par page",
-        "per_page_mobile": "Éléments par page sur mobile",
-        "autoplay": "Lecture automatique",
-        "change_slide_every": "Changer de diapositive toutes les"
+        "per_page_mobile": "Éléments par page sur mobile"
       },
       "content": {
         "label": "Contenu",

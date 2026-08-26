@@ -4,5 +4,11 @@
   },
   "announcement_bar": {
     "dismiss": "إغلاق"
+  },
+  "recently_viewed": {
+    "carousel": {
+      "previous": "السابق",
+      "next": "التالي"
+    }
   }
 }

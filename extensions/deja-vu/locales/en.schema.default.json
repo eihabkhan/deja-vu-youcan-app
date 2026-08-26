@@ -52,9 +52,7 @@
       "carousel": {
         "label": "Carousel",
         "per_page": "Per page",
-        "per_page_mobile": "Per page mobile",
-        "autoplay": "Autoplay",
-        "change_slide_every": "Change slide every"
+        "per_page_mobile": "Per page mobile"
       },
       "content": {
         "label": "Content",

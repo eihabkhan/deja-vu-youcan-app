@@ -52,9 +52,7 @@
       "carousel": {
         "label": "سلايدر",
         "per_page": "عدد العناصر في الصفحة",
-        "per_page_mobile": "عدد العناصر في الصفحة على الهاتف",
-        "autoplay": "التشغيل التلقائي",
-        "change_slide_every": "تغيير الشريحة كل"
+        "per_page_mobile": "عدد العناصر في الصفحة على الهاتف"
       },
       "content": {
         "label": "المحتوى",

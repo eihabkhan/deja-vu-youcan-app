@@ -4,5 +4,11 @@
   },
   "announcement_bar": {
     "dismiss": "Fermer"
+  },
+  "recently_viewed": {
+    "carousel": {
+      "previous": "Précédent",
+      "next": "Suivant"
+    }
   }
 }
