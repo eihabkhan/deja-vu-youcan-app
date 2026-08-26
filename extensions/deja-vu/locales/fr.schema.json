@@ -51,6 +51,8 @@
       },
       "carousel": {
         "label": "Carrousel",
+        "show_pagination": "Afficher la pagination",
+        "pagination_border_radius": "Rayon des bords de la pagination",
         "per_page": "Éléments par page",
         "per_page_mobile": "Éléments par page sur mobile"
       },

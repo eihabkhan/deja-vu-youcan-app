@@ -51,6 +51,8 @@
       },
       "carousel": {
         "label": "Carousel",
+        "show_pagination": "Show pagination",
+        "pagination_border_radius": "Pagination border radius",
         "per_page": "Per page",
         "per_page_mobile": "Per page mobile"
       },

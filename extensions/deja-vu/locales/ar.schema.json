@@ -51,6 +51,8 @@
       },
       "carousel": {
         "label": "سلايدر",
+        "show_pagination": "إظهار أزرار التنقل",
+        "pagination_border_radius": "استدارة حواف أزرار التنقل",
         "per_page": "عدد العناصر في الصفحة",
         "per_page_mobile": "عدد العناصر في الصفحة على الهاتف"
       },
