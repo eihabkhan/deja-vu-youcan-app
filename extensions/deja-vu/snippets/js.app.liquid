@@ -90,7 +90,22 @@
 
         updateItemImages(element, url, images) {
           element.href = url
-          // todo: update images
+
+          if (!images.length) {
+            element.querySelector('[dv-product="image-placeholder"]').removeAttribute('hidden');
+
+            return
+          }
+          
+          images.forEach(image => {
+            const img = document.createElement('img');
+            
+            img.src = image
+            img.style.width = "100%"
+            img.style.height = "100%"
+
+            element.append(img)
+          })
         }
         updateItemName(element, url, name) {
           element.href = url

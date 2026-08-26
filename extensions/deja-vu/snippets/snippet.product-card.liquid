@@ -1,7 +1,15 @@
 <template dv-product="card">
   <div class="dv-product">
-    <a class="dv-product__images" dv-product="images">
-     {% render 'snippet.placeholder', size: 48 %}
+    <a 
+      class="dv-product__images" 
+      dv-product="images"
+      {% if block.settings.show_second_image_on_hover %}
+        data-show-second-image
+      {% endif %}
+    >
+      <div class="dv-product__image-placeholder" dv-product="image-placeholder" hidden>
+        {% render 'snippet.placeholder', size: 48 %}
+      </div>
     </a>
     <div class="dv-product__info">
       <a class="dv-product__name" dv-product="name">Product name</a>
