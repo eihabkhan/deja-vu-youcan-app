@@ -18,9 +18,30 @@
         connectedCallback() {
           this.viewedProducts = this.getViewedProducts()
           this.currentProduct = this.initCurrentProduct()
-          
+
           this.persist()
-          this.render(this.getProductsToRender())
+
+          const products = this.getProductsToRender()
+
+          if (!products.length && this.isPreview) {
+            this.renderPreview()
+
+            return
+          }
+
+          this.render(products)
+        }
+
+        get isPreview() {
+          try {
+            return window.self !== window.top
+          } catch {
+            return true
+          }
+        }
+
+        get perPage() {
+          return Number(getComputedStyle(this).getPropertyValue('--per-page')) || 1
         }
 
         initCurrentProduct() {
@@ -69,6 +90,16 @@
           if (name) this.updateItemName(name, product.url, product.name)
           if (price) this.updateItemPrice(price, product.price)
           if (compareAt) this.updateItemCompareAt(compareAt, product.compareAtPrice)
+
+          return card
+        }
+
+        createPlaceholderCard() {
+          const card = this.productCardTemplate.content.cloneNode(true)
+
+          if (!card) return
+
+          card.querySelector('[dv-product="image-placeholder"]')?.removeAttribute('hidden')
 
           return card
         }
@@ -134,13 +165,19 @@
             return
           }
 
+          this.mount(products.map(product => this.createProductCard(product)))
+        }
+
+        renderPreview() {
+          const count = Math.max(this.perPage + 2, 4)
+
+          this.mount(Array.from({ length: count }, () => this.createPlaceholderCard()))
+        }
+
+        mount(cards) {
           const fragment = new DocumentFragment();
 
-          products.forEach(product => {
-            const productCard = this.createProductCard(product)
-
-            fragment.append(productCard)
-          })
+          fragment.append(...cards)
 
           this.querySelector('[dv-product="list"]').replaceChildren(fragment)
 
