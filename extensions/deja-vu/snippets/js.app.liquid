@@ -42,6 +42,22 @@
           return Number(getComputedStyle(this).getPropertyValue('--per-page')) || 1
         }
 
+        get moneyFormat() {
+          const locale = window.Dotshop?.customer_locale || document.documentElement.lang || 'en-US'
+
+          const parts = new Intl.NumberFormat(locale, {
+            style: 'currency',
+            currency: 'USD',
+            currencyDisplay: 'symbol',
+          }).formatToParts(1)
+
+          return {
+            locale,
+            symbol: window.Dotshop?.currency ?? '',
+            symbolFirst: parts.findIndex(part => part.type === 'currency') === 0,
+          }
+        }
+
         initCurrentProduct() {
           const product = {}
           
@@ -49,10 +65,10 @@
           product.name = "{{ product.name }}";
           product.images = JSON.parse({{ product.images | slice: 0, 2 | json }});
           product.url = "{{ product.url }}";
-          product.price = "{{ product.price | money }}";
+          product.price = Number("{{ product.price }}");
 
           {% if product.compare_at_price %}
-            product.compareAtPrice = "{{ product.compare_at_price | money }}";
+            product.compareAtPrice = Number("{{ product.compare_at_price }}");
           {% else %}
             product.compareAtPrice = null;
           {% endif %}
@@ -130,11 +146,43 @@
         }
 
         updateItemPrice(element, price) {
-          element.textContent = price
+          element.textContent = this.formatCurrency(price)
         }
 
         updateItemCompareAt(element, compareAt) {
-          element.textContent = compareAt
+          if (!Number.isFinite(compareAt)) {
+            element.hidden = true
+
+            return
+          }
+
+          element.textContent = this.formatCurrency(compareAt)
+        }
+
+        shouldUsePrecision(amount) {
+          const settings = window.Dotshop?.store?.multicurrency_settings
+
+          if (!settings?.isMulticurrencyActive) {
+            return !Number.isInteger(amount)
+          }
+
+          return Boolean(settings.usePrecision)
+        }
+
+        formatCurrency(amount) {
+          if (!Number.isFinite(amount)) return ''
+
+          const { locale, symbol, symbolFirst } = this.moneyFormat
+          const withPrecision = this.shouldUsePrecision(amount)
+
+          const value = new Intl.NumberFormat(locale, {
+            style: 'decimal',
+            roundingMode: 'floor',
+            maximumFractionDigits: withPrecision ? 2 : 0,
+            minimumFractionDigits: withPrecision ? 2 : 0,
+          }).format(amount)
+
+          return symbolFirst ? `${symbol} ${value}` : `${value} ${symbol}`
         }
 
         createProductImage(url) {
