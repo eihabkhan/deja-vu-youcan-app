@@ -21,15 +21,13 @@
 
           this.persist()
 
-          const products = this.getProductsToRender()
-
-          if (!products.length && this.isPreview) {
+          if (this.isPreview) {
             this.renderPreview()
 
             return
           }
 
-          this.render(products)
+          this.render(this.getProductsToRender())
         }
 
         get isPreview() {
