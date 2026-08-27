@@ -1,14 +1,15 @@
 {
-    "name": "Deja vu",
-    "id": "app_FBwMT233gx1Q4rzl6tkR0g9QxLw",
-    "handle": "deja-vu",
-    "oauth": {
-        "scopes": [
-            "*"
-        ],
-        "client_id": "3034"
-    },
-    "extension_ids": {
-        "deja-vu": "ext_FBwMnO8R8jxfeVPalNWjrxGuIEs"
-    }
+  "name": "Deja vu",
+  "id": "app_FBwMT233gx1Q4rzl6tkR0g9QxLw",
+  "app_url": null,
+  "handle": "deja-vu",
+  "oauth": {
+    "scopes": [
+      "*"
+    ],
+    "client_id": "3034"
+  },
+  "extension_ids": {
+    "deja-vu": "ext_FBwMnO8R8jxfeVPalNWjrxGuIEs"
+  }
 }

@@ -1,8 +1,8 @@
 {
-  "name": "shop-app-template-none",
+  "name": "deja-vu",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "youcan": "youcan",
     "dev": "youcan app dev",
