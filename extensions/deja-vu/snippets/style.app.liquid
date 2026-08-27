@@ -132,12 +132,16 @@
 
       .dv-product__images {
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr);
+        flex-shrink: 0;
+        overflow: hidden;
         margin: var(--image-margin) var(--image-margin) 0;
         aspect-ratio: var(--product-card-ratio);
         border: 1px solid var(--card-border-color);
         color: var(--card-placeholder-fg);
         border-radius: var(--image-radius);
-        
+
         .dv-product__image-placeholder {
           display: flex;
           align-items: center;
@@ -148,6 +152,8 @@
         }
 
         img {
+          width: 100%;
+          height: 100%;
           object-fit: cover;
           transition: all 300ms ease-out;
         }
@@ -183,7 +189,7 @@
         flex-direction: column;
         justify-content: space-between;
         gap: var(--content-gap);
-        height: 100%;
+        flex: 1 0 auto;
 
         .dv-product__name,
         .dv-product__current-price,
